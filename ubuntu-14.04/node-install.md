@@ -20,5 +20,5 @@ sudo npm install -g n
 
 ### install node stable version
 ```sh
-n stable
+sudo n stable
 ```
