@@ -1,24 +1,24 @@
-# update
+### update
 ```sh
 sudo apt-get update
 ```
 
-# install node
+### install node
 ```sh
 sudo apt-get install nodejs
 ```
 
-# install npm
+### install npm
 ```sh
 sudo npm install -g n
 ```
 
-# install n (version control)
+### install n (version control)
 ```sh
 sudo npm install -g n
 ```
 
-# install node stable version
+### install node stable version
 ```sh
 n stable
 ```
