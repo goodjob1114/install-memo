@@ -10,7 +10,7 @@ sudo apt-get install nodejs
 
 ### install npm
 ```sh
-sudo npm install -g n
+sudo apt-get install npm
 ```
 
 ### install n (version control)
