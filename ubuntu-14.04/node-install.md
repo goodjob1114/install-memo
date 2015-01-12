@@ -5,12 +5,12 @@ sudo apt-get update
 
 ### install node
 ```sh
-sudo apt-get install nodejs
+sudo apt-get -y install nodejs
 ```
 
 ### install npm
 ```sh
-sudo apt-get install npm
+sudo apt-get -y install npm
 ```
 
 ### install n (version control)
