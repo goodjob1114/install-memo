@@ -6,18 +6,22 @@ sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libr
 # github URL => https://github.com/fesplugas/rbenv-installer
 curl https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
 
-bashrc="~/.bashrc"
+bashrc_path=~/.bashrc
 
-cat >> $bashrc << EOF
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-EOF
+echo "export RBENV_ROOT=\"\${HOME}/.rbenv\"" >> $bashrc_path
+echo "if [ -d \"\${RBENV_ROOT}\" ]; then" >> $bashrc_path
+echo "export PATH=\"\${RBENV_ROOT}/bin:\${PATH}\"" >> $bashrc_path
+echo "eval \"\$(rbenv init -)\"" >> $bashrc_path
+echo "fi" >> $bashrc_path
 
-source $bashrc
+exec $SHELL
+
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> $bashrc_path
+exec $SHELL
 
 rbenv install 2.1.5
 rbenv global 2.1.5
 ruby -v
+
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
